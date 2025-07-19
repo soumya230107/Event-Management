@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<!-- Hero Banner Section -->
+<section class="py-5 text-white" style="background: linear-gradient(to right, #000000, #fd7e14);">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold">About BookMyEvent</h1>
+    <p class="lead mt-3">Plan less, celebrate more. All your events, perfectly managed — all in one place.</p>
+  </div>
+</section>
+
+<!-- Who We Are Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4">
+        <img src="https://images.pexels.com/photos/32994501/pexels-photo-32994501.jpeg" class="img-fluid rounded shadow" alt="About BookMyEvent">
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold" style="color: #fd7e14; font-family: 'Poppins', sans-serif; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
+         Who We Are
+        </h2>
+
+        <p class="text-muted mt-3">
+          BookMyEvent is your one-stop platform for planning unforgettable events. From intimate birthday gatherings to grand weddings and high-energy concerts, we simplify the process of finding venues, customizing packages, and booking everything online — so you can focus on the fun.
+        </p>
+        <p class="text-muted">
+          We believe every celebration should be smooth, stress-free, and spectacular. Our goal is to bring your ideas to life with the best tools, team, and technology.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hover Animation Styles for What We Offer -->
+<style>
+  .offer-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+  }
+
+  .offer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-color: #fd7e14;
+  }
+
+  .offer-card i {
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #fd7e14;
+  }
+
+  .offer-card:hover i {
+    transform: scale(1.2);
+    color: #e85c00;
+  }
+</style>
+
+<!-- What We Offer Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5" style="color: #000;">What We Offer</h2>
+    <div class="row text-center g-4">
+
+      <!-- Event Types -->
+      <div class="col-md-4">
+        <div class="p-4 offer-card shadow-sm h-100">
+          <i class="bi bi-calendar2-event fs-1"></i>
+          <h4 class="mt-3">All Types of Events</h4>
+          <p class="text-muted">Weddings, birthdays, corporate meets, concerts, cultural nights — you name it, we do it.</p>
+        </div>
+      </div>
+
+      <!-- Venues -->
+      <div class="col-md-4">
+        <div class="p-4 offer-card shadow-sm h-100">
+          <i class="bi bi-geo-alt fs-1"></i>
+          <h4 class="mt-3">Top Venues</h4>
+          <p class="text-muted">Explore premium halls, outdoor lawns, rooftops, and cozy cafés near you for your perfect celebration.</p>
+        </div>
+      </div>
+
+      <!-- Instant Booking -->
+      <div class="col-md-4">
+        <div class="p-4 offer-card shadow-sm h-100">
+          <i class="bi bi-lightning-charge fs-1"></i>
+          <h4 class="mt-3">Instant Booking</h4>
+          <p class="text-muted">Book venues and services in just a few clicks — no calls, no confusion, just celebration.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Optional: Call-to-Action -->
+<section class="py-5 text-white text-center" style="background: linear-gradient(to right, #000000, #fd7e14);">
+  <div class="container">
+    <h2 class="fw-bold" style="font-family: 'Poppins', sans-serif;">Ready to Host Your Next Event?</h2>
+    <p class="lead mt-2">Join thousands who trust <strong>BookMyEvent</strong> to make their occasions unforgettable.</p>
+    <a href="/contact" class="btn btn-light btn-lg mt-3 fw-semibold">Contact Us</a>
+  </div>
+</section>
+
+{% endblock %}

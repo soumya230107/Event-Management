@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container-fluid my-4 px-0">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="https://images.pexels.com/photos/7081180/pexels-photo-7081180.jpeg" class="d-block w-100" style="width: 100%; height: 450px; object-fit: cover; margin: 0 auto;" alt="Wedding Setup">
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/12906339/pexels-photo-12906339.jpeg" class="d-block w-100" style="width: 100%; height: 450px; object-fit: cover; margin: 0 auto;" alt="Concert Crowd">
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg" class="d-block w-100" style="width: 100%; height: 450px; object-fit: cover; margin: 0 auto;" alt="Birthday Party">
+    </div>
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+
+
+
+
+<div class="album py-0 bg-body-tertiary">
+  <div class="container">
+    <h1 class="text-center fw-bold display-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #000000ff; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">
+    Book Venues, Plan Events, Celebrate Life
+    </h1>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+      <!-- Card 1 -->
+      {% comment %} <div class="col">
+        <a href="/event/wedding/" class="text-decoration-none text-dark">
+          <div class="card shadow-sm h-100">
+            <img src="https://cdn.pixabay.com/photo/2016/11/23/17/56/beach-1854076_1280.jpg" class="card-img-top" style="height: 225px; object-fit: cover;" alt="Wedding Event">
+            <div class="card-body">
+              <p class="card-text">Celebrate life’s special moments with elegant and personalized gatherings.</p>
+            </div>
+          </div>
+        </a>
+      </div> {% endcomment %}
+      <div class="col">
+        <a href="/event/wedding/" class="text-decoration-none text-dark">
+          <div class="card shadow-sm h-100">
+            <img src="https://cdn.pixabay.com/photo/2016/11/23/17/56/beach-1854076_1280.jpg" class="card-img-top" style="height: 225px; object-fit: cover;" alt="Wedding Event">
+              <div class="card-body">
+                <h5 class="card-title fw-bold mb-2">Social Events</h5>
+                <p class="card-text">Celebrate life’s special moments with elegant and personalized gatherings.</p>
+              </div>
+        </div>
+        </a>
+      </div>
+
+
+      <!-- Card 2 -->
+      <div class="col">
+        <a href="/event/birthday/" class="text-decoration-none text-dark">
+          <div class="card shadow-sm h-100">
+            <img src="https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_1280.jpg" class="card-img-top" style="height: 225px; object-fit: cover;" alt="Birthday Party">
+            <div class="card-body">
+              <h5 class="card-title fw-bold mb-2">Corporate Events</h5>
+              <p class="card-text">Host impactful business meetings, conferences, or team outings with ease.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col">
+        <a href="/event/concert/" class="text-decoration-none text-dark">
+          <div class="card shadow-sm h-100">
+            <img src="https://cdn.pixabay.com/photo/2013/09/08/19/54/fireworks-180553_1280.jpg" class="card-img-top" style="height: 225px; object-fit: cover;" alt="Concert Night">
+            <div class="card-body">
+              <h5 class="card-title fw-bold mb-2">Seasonal Events</h5>
+              <p class="Card-text"> Bring in the festive cheer with vibrant seasonal celebrations</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col">
+        <a href="/event/corporate/" class="text-decoration-none text-dark">
+          <div class="card shadow-sm h-100">
+            <img src="https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg" class="card-img-top" style="height: 225px; object-fit: cover;" alt="Corporate Event">
+            <div class="card-body">
+              <h5 class="card-title fw-bold mb-2">Entertainment Events</h5>
+              <p class="card-text">Add glamour to your events with celebrity appearances and star-studded shows.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col">
+        <a href="/event/outdoor/" class="text-decoration-none text-dark">
+          <div class="card shadow-sm h-100">
+            <img src="https://cdn.pixabay.com/photo/2025/05/16/10/55/ai-generated-9603565_1280.jpg" class="card-img-top" style="height: 225px; object-fit: cover;" alt="Outdoor Event">
+            <div class="card-body">
+              <h5 class="card-title fw-bold mb-2">Health and Wellness Events</h5>
+              <p class="card-text">Promote well-being with fitness sessions, health camps, and wellness talks.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col">
+        <a href="/event/fireworks/" class="text-decoration-none text-dark">
+          <div class="card shadow-sm h-100">
+            <img src="https://cdn.pixabay.com/photo/2022/05/24/04/38/study-7217599_1280.jpg" class="card-img-top" style="height: 225px; object-fit: cover;" alt="Fireworks Night">
+            <div class="card-body">
+              <h5 class="card-title fw-bold mb-2">Educational Events</h5>
+              <p class="card-text">Organize impactful seminars, workshops, and educational competitions.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="bg-dark text-white pt-4 pb-3 mt-5">
+  <div class="container text-md-left">
+    <div class="row">
+
+      <!-- About Section -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase">BookMyEvent</h5>
+        <p>
+          BookMyEvent helps you plan and manage weddings, parties, corporate events, and more — all in one place. From venue booking to custom themes, we make every occasion seamless and unforgettable.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="/" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="/about" class="text-white text-decoration-none">About Us</a></li>
+          <li><a href="/services" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="/contact" class="text-white text-decoration-none">For more information</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase">Contact Us</h5>
+        <ul class="list-unstyled">
+          <li><i class="bi bi-envelope"></i> info@bookmyevent.com</li>
+          <li><i class="bi bi-phone"></i> +91 90238 76598</li>
+          <li><i class="bi bi-geo-alt"></i> Guwahati, Assam</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="text-center bg-secondary text-white py-2 mt-3">
+    © 2025 EventHub. All Rights Reserved.
+  </div>
+</footer>
+
+
+
+{% endblock body %}

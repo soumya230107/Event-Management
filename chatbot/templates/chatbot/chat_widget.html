@@ -1,0 +1,97 @@
+{% load static %}
+
+<!-- Floating Chatbot Icon -->
+<div id="chatbot-icon" onclick="toggleChat()" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    cursor: pointer;
+">
+    <img src="{% static 'chatbot/chat-icon.png' %}" width="60" height="60" alt="Chatbot Icon">
+</div>
+
+<!-- Chatbot Popup Container -->
+<div id="chat-container" style="
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 480px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    flex-direction: column;
+">
+
+
+    <!-- Header -->
+    <div style="
+        background-color: #ff6600;
+        color: white;
+        padding: 15px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    ">
+        BookMyEvent Chatbot
+    </div>
+
+    <!-- Chat Messages -->
+    <div id="chat-box" style="
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        font-size: 14px;
+        background: #f9f9f9;
+    "></div>
+
+    <!-- Input Area -->
+    <div style="
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #ccc;
+        background: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        gap: 10px;
+        height: 60px;
+    ">
+        <input
+            type="text"
+            id="user-input"
+            placeholder="Type your message..."
+            style="
+                flex: 1;
+                height: 100%;
+                padding: 0 15px;
+                font-size: 14px;
+                border: 1px solid #ddd;
+                border-radius: 30px;
+                outline: none;
+                box-sizing: border-box;
+            "
+            onkeydown="if(event.key === 'Enter') sendMessage()"
+        />
+        <button onclick="sendMessage()" style="
+            background: #ff6600;
+            color: white;
+            border: none;
+            width: 44px;
+            height: 44px;
+            font-size: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        ">
+            ➤
+        </button>
+    </div>
+</div>
+
+<!-- JS Link -->
+<script src="{% static 'chatbot/chatbot.js' %}"></script>
