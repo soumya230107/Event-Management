@@ -1,0 +1,171 @@
+{% load static %}
+<html>
+    <head>
+        <title>premium</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body{
+                background-image:url("https://tse3.mm.bing.net/th/id/OIP.7a9ljgdrqKRQH72nv_sv4QHaEK?pid=Api&P=0&h=1080");
+                background-position: cover;
+                background-attachment: fixed;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: rgb(18, 17, 17);
+                background-size:cover;
+            }
+            header.nav{
+                background-color: rgba(0, 0, 0, 0.499);
+                padding: 20px;
+                display: flex;
+                text-align: center;
+            }
+            header.h1{
+                color:rgb(26, 25, 23);
+                text-align: center;
+                padding: 10px;
+                text-size-adjust: large;
+                font-size: 100px;
+                font-weight: bold;
+            }
+            .nav{
+                text-align: left;
+                margin:20px;
+                display: flex;
+                gap: 10px;
+            }
+            .nav a{
+                color: rgb(49, 7, 214);
+            }
+            h3{
+                font-size: 20px;
+            }
+            
+            .container{
+              margin: 10px auto;
+              padding: 10px;
+              border-radius: 5px;
+              max-width:1450px
+            }
+            .duration{
+                padding:20px;
+                align-items: center;
+                display: flex;
+            }
+            input,textarea{
+                color: rgba(5, 1, 1, 0.538);
+                background-color: rgba(205, 209, 211, 0.36);
+                box-sizing: border-box;
+                width: 100%;
+                padding: 10px;
+                margin:10px 0 ;
+            }
+            .contact{
+                padding:40px;
+            }
+            .image{
+                
+                
+                margin-left: 800px;
+            
+            }
+            .id{
+                padding: 40px;
+            }
+            .duration{
+                padding: 40px;
+            }
+            button{
+                background-color: rgba(2, 5, 17, 0.558);
+                color: #f5f4f4f5;
+                width:200px;
+                margin: 10px;
+                border: none;
+                cursor: pointer;
+            }
+            lable{
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+        <div class="nav">
+        <a href="/">Home</a><br>
+        <a href="/about">About us</a>
+        <a href="/contact">Contact Us</a>
+        </div>
+          <h1>🎉Enjoy Premium Membership !!</h1>
+        </header>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+    window.onload = () => {
+        const duration = 3* 1000; 
+        const animationEnd = Date.now() + duration;
+        const defaults = { startVelocity: 100, spread: 360, ticks: 10000, zIndex: 1000,
+        color:['pink','blue','red','voilet','black','darkblue']};
+
+        const interval = setInterval(function () {
+            const timeLeft = animationEnd - Date.now();
+
+            if (timeLeft <= 0) {
+                return clearInterval(interval);
+            }
+
+            const x = Math.random();
+            const y = Math.random() * 0.8; 
+            confetti({
+                ...defaults,
+                particleCount: 100,
+                origin: { x, y }
+            });
+        }, 200);
+    };
+</script>
+
+       <div class="container">
+            <div class="details"></div>
+                <h3>Personal Details</h3>
+                <lable>Name:</lable>
+                <input type="name" placeholder="name">
+                <lable>Feild:</lable>
+                <input type="name" placeholder="feild">
+                <lable>Type of Feild:</lable>
+                <input type="name" placeholder="type">
+                <lable >Description:</lable>
+                <textarea name="description" id="description">write about your feild</textarea>
+        </div>
+        <div class="contact">
+             <h3>Contact Information</h3>
+             <lable>Contanct No.:</lable>
+             <input type="contact" placeholder="contact">
+             <lable>Email Address:</lable>
+             <input type="email" placeholder="enter your mail">
+        </div>
+        <div class="id">
+            <h3>ID details</h3>
+            <label>Enter id no.:</label>
+            <input class="name" placeholder="enter here">
+            <label>Type of Id:</label>
+            <select>
+                <option>Aadhar card</option>
+                <option>Pan card</option>
+                <option>Voter ID</option>
+                <option>Other card</option>
+            </select>
+              <button type="button">Submit And verify </button>
+             <label>Upload picture of id here(not more than 20KB)</label>
+             <input type="file" id="imageupload" name="image" accept="image/* required">
+            <h3>Enter duration of membership:</h3>
+            <select placeholder="choose">
+                <option>1 year</option>
+                <option>2 year</option>
+                <option>3 year</option>
+                <option>4 year and more</option>
+            </select>
+        </div>
+        <div class="footer-button">
+        <button type="button">Proceed to payement </button> 
+        </div>      
+</div>
+             <a href="/">LOGOUT</a>
+     </body>
+</html>
