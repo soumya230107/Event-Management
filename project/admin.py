@@ -8,6 +8,10 @@ from .models import EntertainmentEvent
 from .models import HealthEvent
 from .models import EducationalEvent
 from .models import CorporateEvent
+class DandiyaBookingAdmin(admin.ModelAdmin):
+    list_display = ('service', 'datetime')
+
+admin.site.register(DandiyaBooking)
 
 @admin.register(SocialEvent)
 class SocialEventAdmin(admin.ModelAdmin):
