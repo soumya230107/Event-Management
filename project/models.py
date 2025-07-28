@@ -95,3 +95,16 @@ class EducationalEvent(models.Model):
    
     def _str_(self):
         return f"{self.event_type} by {self.name}"
+
+class DandiyaBooking(models.Model):
+    SERVICE_CHOICES = [
+        ('Costume Booking', 'Costume Booking'),
+        ('Costume Purchase', 'Costume Purchase'),
+        ('Hall Booking', 'Hall Booking'),
+    ]
+
+    service = models.CharField(max_length=50, choices=SERVICE_CHOICES)
+    datetime = models.DateTimeField()
+
+    def __str__(self):
+        return f"{self.service} on {self.datetime.strftime('%Y-%m-%d %H:%M')}"
