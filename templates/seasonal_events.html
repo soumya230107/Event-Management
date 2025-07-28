@@ -46,6 +46,15 @@
       font-weight: 600;
       color: #032b41;
     }
+    .nav {
+            color: #cccccc;
+            display: flex;
+            padding-left: 400px;
+            gap: 10px;
+        }
+        a{
+          color: white;
+        }
 
     .form-control {
       background: rgba(255, 255, 255, 0.184);
@@ -82,6 +91,12 @@
   </style>
 </head>
 <body>
+  <div class="form-container">
+     <div class="nav">
+        <a href="/index">Home</a>
+        <a href="/about">About us</a>
+        <a href="/contact">Contact us</a>
+    </div>
   <div class="form-container">
     <h4 class="mb-3">🌟 Welcome, <strong>{{ username }}</strong></h4>
     <h3 class="mb-4">Celebrate the Season in Style 🎉</h3>
