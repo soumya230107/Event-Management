@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dandiya Booking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    body {
+      background-image: url("https://www.shaadidukaan.com/vogue/wp-content/uploads/2019/09/peppy-theme%EF%BB%BF.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      margin: 20px;
+      border-radius: 20px;
+    }
+
+    .d-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      width: 18rem;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .book-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 15px 30px;
+      background: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2em;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .popup.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup-content {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .popup-content input {
+      margin: 10px 0;
+      padding: 10px;
+      width: 90%;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .popup-content button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #4caf50;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .popup-content .close {
+      background: crimson;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>💃 Dandiya Costume & Hall Booking 💃</h1>
+</header>
+
+<!-- Cards -->
+<div class="d-flex">
+  <div class="card">
+    <img src="https://i.ebayimg.com/images/g/PQIAAOSwtVViNb79/s-l1600.jpg" alt="Costume Booking">
+    <h5>Costume Booking</h5>
+    <p>✨Book your perfect costume for cultural events and parties. Choose your size and shine bright! ✨</p>
+    <button onclick="selectService('Costume Booking')" style="width:200px;height:50px">Select</button>
+  </div>
+
+  <div class="card">
+    <img src="https://i.pinimg.com/originals/bc/8f/8b/bc8f8b9249423a9fb99f01a3dee73601.jpg" alt="Purchase Costume" style="height: 360px; width:288px">
+    <h5>Purchase Costume</h5>
+    <p>Step into the spotlight with vibrant traditional outfits for Navratri. Own your moment and celebrate with confidence. ✨</p>
+    <button onclick="selectService('Purchase Costume')" style="width:200px;height:50px">Select</button>
+  </div>
+
+  <div class="card">
+    <img src="https://i.pinimg.com/originals/16/23/d0/1623d0817a308cdb3a8468f77f8bb155.jpg" alt="Hall Booking" style="height: 360px; width:288px">
+    <h5>Hall Booking</h5>
+    <p>Reserve your perfect venue with ease! From weddings to cultural nights—book now and make it unforgettable!</p>
+    <button onclick="selectService('Hall Booking')" style="width:200px;height:50px">Select</button>
+  </div>
+</div>
+
+<button class="book-btn" onclick="showPopup()">Book Now</button>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h2>Select Booking Date & Time</h2>
+    <input type="text" id="booking-datetime" placeholder="Pick Date & Time" />
+    <button onclick="submitBooking()">Book Slot</button>
+    <button class="close" onclick="closePopup()">Cancel</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+  let selectedService = "";
+
+  function selectService(service) {
+    selectedService = service;
+    alert(`✅ You selected: ${service}`);
+  }
+
+  function showPopup() {
+    if (!selectedService) {
+      alert("⚠️ Please select a service before booking!");
+      return;
+    }
+    document.getElementById('popup').classList.add('show');
+  }
+
+  function closePopup() {
+    document.getElementById('popup').classList.remove('show');
+  }
+
+  function submitBooking() {
+    const datetime = document.getElementById('booking-datetime').value;
+    if (!datetime) {
+      alert("⚠️ Please pick a date and time.");
+      return;
+    }
+
+    fetch('/save_booking/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': '{{ csrf_token }}'
+      },
+      body: JSON.stringify({
+        service: selectedService,
+        datetime: datetime
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("✅ Booking Confirmed!");
+      closePopup();
+    })
+    .catch(error => {
+      alert("❌ Failed to save booking.");
+      console.error(error);
+    });
+  }
+
+  flatpickr("#booking-datetime", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    minDate: "today"
+  });
+</script>
+
+</body>
+</html>
