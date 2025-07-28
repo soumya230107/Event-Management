@@ -6,7 +6,7 @@ from .models import HealthEvent
 from .models import EntertainmentEvent
 from .models import CorporateEvent
 from .models import EducationalEvent
-
+from .models import DandiyaBooking
 class SocialEventForm(forms.ModelForm):
     class Meta:
         model = SocialEvent
