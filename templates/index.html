@@ -134,6 +134,78 @@
     </div>
   </div>
 </div>
+<section class="py-5" style="background-color: #fceffe;">
+
+
+
+   <div class="cloud d-flex flex-wrap" style="align-items: flex-start; padding-left: 60px; gap: 1rem;">
+  <a href="{% url 'corporate_events' %}">
+    <h2 class="text-start" style="color: #5e148b; font-weight: 700;">Corporate</h2>
+    <h4 class="text-start" style="color: crimson; font-weight: 700;">Events</h4>
+  </a>
+  <span class="word small" style="padding-left:350" >Seminar</span>
+  <span class="word large" style="font-weight: 800;padding-left:370px;">Inauguration</span>
+  <span class="word xl" style="padding-left:390px">Team Outing</span>
+  <span class="word medium" style="padding-left:350px">Networking</span>
+  <span class="word medium" style="padding-left:370px">Conference</span>
+  <span class="word medium" style="color: green;padding-left:390px">Award ceremony</span>
+  <span class="word xxl"style="padding-left:410px">CSR</span>
+  <span class="word small"style="padding-left:350">Product Launch</span>
+  <span class="word small"style="padding-left:370px">Cultural Day</span>
+  <span class="word medium" style="color: maroon;padding-left:390px">Training</span>
+</div>
+</section>
+
+
+<!-- Styles for Word Cloud -->
+<style>
+  .cloud {
+    flex-direction:unset;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .word {
+    font-family: 'Poppins', sans-serif;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .word:hover {
+    transform: scale(1.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .small {
+    font-size: 16px;
+    padding-left: 250px;
+  }
+
+  .medium {
+    font-size: 20px;
+  padding-left: 300px;
+  }
+
+  .large {
+    font-size: 26px;
+    padding-left: 400px;
+    color: #7d3cff;
+  }
+
+  .xl {
+    font-size: 30px;
+    padding-left: 350px;
+    color: #6c5ce7;
+  }
+  .xxl{
+    font-size: 35px;
+    color: darkblue;
+  }
+</style>
+</body>
 
 
 
