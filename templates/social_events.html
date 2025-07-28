@@ -81,6 +81,12 @@
 </head>
 <body>
   <div class="form-container">
+     <div class="nav">
+        <a href="/index">Home</a>
+        <a href="/about">About us</a>
+        <a href="/contact">Contact us</a>
+    </div>
+  <div class="form-container">
     <h4 class="mb-4">👋 Hello, <strong>{{ username }}</strong></h4>
     <h3 class="mb-4">Plan Your Perfect Event</h3>
 
@@ -123,7 +129,7 @@
       </div>
 
       <div class="d-grid mt-4">
-        <button type="submit" class="btn btn-primary btn-lg">Submit Event</button>
+        <button type="submit" class="btn btn-primary btn-lg"  onclick="alert('🎉 Form submitted successfully')">Submit Event</button>
       </div>
     </form>
   </div>
